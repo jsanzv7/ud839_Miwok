@@ -17,6 +17,12 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.concurrent.locks.Condition;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -24,5 +30,33 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        ArrayList<String> words = new ArrayList<String>();
+        words.add("one");
+        words.add("two");
+        words.add("three");
+        words.add("four");
+        words.add("five");
+        words.add("six");
+        words.add("seven");
+        words.add("eight");
+        words.add("nine");
+        words.add("ten");
+
+        // Finds the root view of the whole layout
+        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
+
+        // Create a variable to keep track of the current index position
+        int index = 0;
+        while (index<words.size()){
+            // Create a new {@link Textview} that displays the word at
+            // and add the View as a child to the rootView
+            TextView wordView = new TextView(this);
+            wordView.setText(words.get(index));
+            rootView.addView(wordView);
+
+            //Update counter variabl
+            index++; //index = index + 1
+        }
     }
 }
