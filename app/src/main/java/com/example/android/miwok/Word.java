@@ -19,7 +19,9 @@ public class Word {
     private String mMiwokTranslation;
 
     /**Drawable resource ID*/
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Create a new Word object.
@@ -69,6 +71,8 @@ public class Word {
         return mImageResourceId;
     }
 
-    public boolean hasImage(){}
+    public boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 
 }
