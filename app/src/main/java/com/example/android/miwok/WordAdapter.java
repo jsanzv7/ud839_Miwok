@@ -81,6 +81,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
         //Set the background color of the text container View
         textContainer.setBackgroundColor(color);
 
+        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        ImageView playArrowView = (ImageView) listItemView.findViewById(R.id.play_arrow);
+        playArrowView.setImageResource(currentWord.getmPlayArrowId());
+
+        int playArrow = ContextCompat.getColor(getContext(),mColorResourceId);
+        //Set the background color of the text container View
+        playArrowView.setBackgroundColor(color);
+
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
         return listItemView;
