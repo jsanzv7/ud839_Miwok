@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,10 +22,14 @@ public class NumbersFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
-    /** Handles audio focus when playing a sound file */
+    /**
+     * Handles audio focus when playing a sound file
+     */
     private AudioManager mAudioManager;
 
     /**
@@ -83,21 +86,22 @@ public class NumbersFragment extends Fragment {
 
         final ArrayList<Word> words = new ArrayList<Word>();
         //words.add("one");
-        words.add(new Word("one","lutti",R.drawable.number_one,R.raw.number_one,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("two","otiiko",R.drawable.number_two,R.raw.number_two,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("three","tolookosu",R.drawable.number_three,R.raw.number_three,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("four","oyyisa",R.drawable.number_four,R.raw.number_four,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("five","massokka",R.drawable.number_five,R.raw.number_five,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("six","temmokka",R.drawable.number_six,R.raw.number_six,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("seven","kenekaku",R.drawable.number_seven,R.raw.number_seven,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("eight","kawinta",R.drawable.number_eight,R.raw.number_eight,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("nine","wo'e",R.drawable.number_nine,R.raw.number_nine,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("ten","na'aacha",R.drawable.number_ten,R.raw.number_ten,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("two", "otiiko", R.drawable.number_two, R.raw.number_two, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("five", "massokka", R.drawable.number_five, R.raw.number_five, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("six", "temmokka", R.drawable.number_six, R.raw.number_six, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("nine", "wo'e", R.drawable.number_nine, R.raw.number_nine, R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("ten", "na'aacha", R.drawable.number_ten, R.raw.number_ten, R.drawable.baseline_play_arrow_white_24));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);;
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
+        ;
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -146,7 +150,6 @@ public class NumbersFragment extends Fragment {
 
         return rootView;
     }
-
 
 
     @Override
