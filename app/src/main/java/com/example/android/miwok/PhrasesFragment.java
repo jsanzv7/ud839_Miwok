@@ -17,9 +17,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class PhrasesFragment extends Fragment {
 
-    public NumbersFragment() {
+    public PhrasesFragment() {
         // Required empty public constructor
     }
 
@@ -76,28 +76,28 @@ public class NumbersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
+        /** TODO: Insert all the code from the PhrasesActivity’s onCreate() method after the setContentView method call */
 
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
 
         final ArrayList<Word> words = new ArrayList<Word>();
         //words.add("one");
-        words.add(new Word("one","lutti",R.drawable.number_one,R.raw.number_one,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("two","otiiko",R.drawable.number_two,R.raw.number_two,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("three","tolookosu",R.drawable.number_three,R.raw.number_three,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("four","oyyisa",R.drawable.number_four,R.raw.number_four,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("five","massokka",R.drawable.number_five,R.raw.number_five,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("six","temmokka",R.drawable.number_six,R.raw.number_six,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("seven","kenekaku",R.drawable.number_seven,R.raw.number_seven,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("eight","kawinta",R.drawable.number_eight,R.raw.number_eight,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("nine","wo'e",R.drawable.number_nine,R.raw.number_nine,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("ten","na'aacha",R.drawable.number_ten,R.raw.number_ten,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("Where are you going?","minto wuksus",R.raw.phrase_where_are_you_going,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("What is your name?","tinnә oyaase'nә",R.raw.phrase_what_is_your_name,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("My name is...","oyaaset...",R.raw.phrase_my_name_is,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("How are you feeling?","michәksәs?",R.raw.phrase_how_are_you_feeling,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("I’m feeling good.","kuchi achit",R.raw.phrase_im_feeling_good,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("Are you coming?","әәnәs'aa?",R.raw.phrase_are_you_coming,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("Yes, I’m coming.","hәә’ әәnәm",R.raw.phrase_yes_im_coming,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("I’m coming.","әәnәm",R.raw.phrase_im_coming,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("Let’s go.","yoowutis",R.raw.phrase_lets_go,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("Come here.","әnni'nem",R.raw.phrase_come_here,R.drawable.baseline_play_arrow_white_24));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);;
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_phrases);;
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the

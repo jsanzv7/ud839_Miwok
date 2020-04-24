@@ -17,9 +17,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class ColorsFragment extends Fragment {
 
-    public NumbersFragment() {
+    public ColorsFragment() {
         // Required empty public constructor
     }
 
@@ -34,7 +34,6 @@ public class NumbersFragment extends Fragment {
      * (i.e., we gain or lose audio focus because of another app or device).
      */
     private AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
-
         @Override
         public void onAudioFocusChange(int focusChange) {
             if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT ||
@@ -64,6 +63,7 @@ public class NumbersFragment extends Fragment {
      * playing the audio file.
      */
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+
         @Override
         public void onCompletion(MediaPlayer mp) {
             releaseMediaPlayer();
@@ -76,28 +76,26 @@ public class NumbersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
+        /** TODO: Insert all the code from the ColorsActivity’s onCreate() method after the setContentView method call */
 
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
 
         final ArrayList<Word> words = new ArrayList<Word>();
         //words.add("one");
-        words.add(new Word("one","lutti",R.drawable.number_one,R.raw.number_one,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("two","otiiko",R.drawable.number_two,R.raw.number_two,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("three","tolookosu",R.drawable.number_three,R.raw.number_three,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("four","oyyisa",R.drawable.number_four,R.raw.number_four,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("five","massokka",R.drawable.number_five,R.raw.number_five,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("six","temmokka",R.drawable.number_six,R.raw.number_six,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("seven","kenekaku",R.drawable.number_seven,R.raw.number_seven,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("eight","kawinta",R.drawable.number_eight,R.raw.number_eight,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("nine","wo'e",R.drawable.number_nine,R.raw.number_nine,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("ten","na'aacha",R.drawable.number_ten,R.raw.number_ten,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("green", "chokokki", R.drawable.color_green, R.raw.color_green,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("brown", "ṭakaakki", R.drawable.color_brown, R.raw.color_brown,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("gray", "ṭopoppi", R.drawable.color_gray, R.raw.color_gray,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("black", "kululli", R.drawable.color_black, R.raw.color_black,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("white", "kelelli", R.drawable.color_white, R.raw.color_white,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("dusty yellow", "ṭopiisә", R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow,R.drawable.baseline_play_arrow_white_24));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);;
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_colors);;
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -146,8 +144,6 @@ public class NumbersFragment extends Fragment {
 
         return rootView;
     }
-
-
 
     @Override
     public void onStop() {

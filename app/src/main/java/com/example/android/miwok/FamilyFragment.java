@@ -17,9 +17,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class FamilyFragment extends Fragment {
 
-    public NumbersFragment() {
+    public FamilyFragment() {
         // Required empty public constructor
     }
 
@@ -76,28 +76,28 @@ public class NumbersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
+        /** TODO: Insert all the code from the FamilyActivity’s onCreate() method after the setContentView method call */
 
         mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
 
         final ArrayList<Word> words = new ArrayList<Word>();
         //words.add("one");
-        words.add(new Word("one","lutti",R.drawable.number_one,R.raw.number_one,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("two","otiiko",R.drawable.number_two,R.raw.number_two,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("three","tolookosu",R.drawable.number_three,R.raw.number_three,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("four","oyyisa",R.drawable.number_four,R.raw.number_four,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("five","massokka",R.drawable.number_five,R.raw.number_five,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("six","temmokka",R.drawable.number_six,R.raw.number_six,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("seven","kenekaku",R.drawable.number_seven,R.raw.number_seven,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("eight","kawinta",R.drawable.number_eight,R.raw.number_eight,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("nine","wo'e",R.drawable.number_nine,R.raw.number_nine,R.drawable.baseline_play_arrow_white_24));
-        words.add(new Word("ten","na'aacha",R.drawable.number_ten,R.raw.number_ten,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("father", "әpә", R.drawable.family_father, R.raw.family_father,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("mother", "әṭa", R.drawable.family_mother, R.raw.family_mother,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("son", "angsi", R.drawable.family_son, R.raw.family_son,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("daughter", "tune", R.drawable.family_daughter, R.raw.family_daughter,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("older brother", "taachi", R.drawable.family_older_brother, R.raw.family_older_brother,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("younger brother", "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("older sister", "teṭe", R.drawable.family_older_sister, R.raw.family_older_sister,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("younger sister", "kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("grandmother", "ama", R.drawable.family_grandmother, R.raw.family_grandmother,R.drawable.baseline_play_arrow_white_24));
+        words.add(new Word("grandfather", "paapa", R.drawable.family_grandfather, R.raw.family_grandfather,R.drawable.baseline_play_arrow_white_24));
 
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_numbers);;
+        WordAdapter adapter = new WordAdapter(getActivity(), words, R.color.category_family);;
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
